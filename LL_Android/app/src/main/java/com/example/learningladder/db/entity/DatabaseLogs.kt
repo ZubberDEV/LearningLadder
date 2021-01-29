@@ -2,6 +2,7 @@ package com.example.learningladder.db.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.example.learningladder.db.utils.Converter
 import com.example.learningladder.domain.Logs
 
 @Entity
@@ -16,6 +17,6 @@ data class DatabaseLogs(@PrimaryKey(autoGenerate = true)
 
 fun List<DatabaseLogs>.asModel(): List<Logs>{
     return map {
-        Logs()
+        Logs(it.Id, it.activityTypeId, Converter.fromTimestamp(it.date), Converter.fromTimestamp(it.sessionStartTime), Converter.fromTimestamp(it.sessionEndTime))
     }
 }

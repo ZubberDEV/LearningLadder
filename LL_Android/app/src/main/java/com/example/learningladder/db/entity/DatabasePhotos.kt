@@ -13,7 +13,7 @@ data class DatabasePhotos(@PrimaryKey(autoGenerate = true)
 
 fun List<DatabasePhotos>.asModel(): List<Photos>{
     return map {
-        Photos()
+        Photos(it.logId, it.path)
     }
 }
 

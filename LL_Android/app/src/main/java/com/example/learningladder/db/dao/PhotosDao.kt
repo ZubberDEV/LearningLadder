@@ -14,5 +14,5 @@ interface PhotosDao {
     fun gatPhoto(): LiveData<List<DatabasePhotos>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(photos: List<DatabasePhotos>)
+    fun insert(photo: DatabasePhotos)
 }

@@ -1,12 +1,13 @@
 package com.example.learningladder.domain
 
-import android.media.Image
-import android.view.autofill.AutofillId
-import java.io.Serializable
-import java.sql.Time
-import java.util.*
+import com.example.learningladder.db.entity.DatabasePhotos
 
-open class Photos (): Serializable {
-    open var logId: Int? = null
-    open var path: String? = null
+
+class Photos (
+    var logId: Int,
+    var path: String,
+)
+
+fun Photos.asDatabaseModel(): DatabasePhotos {
+    return DatabasePhotos(logId, path)
 }

@@ -1,15 +1,19 @@
 package com.example.learningladder.domain
 
-import android.view.autofill.AutofillId
-import java.io.Serializable
+import com.example.learningladder.db.entity.DatabaseLogs
+import com.example.learningladder.db.utils.Converter
 import java.util.*
 
-open class Logs (): Serializable {
-    open var Id: Int? = null
-    open var activityTypeId: Int? = null
-    open var date: Date? = null
-    open var sessionStartTime: Date? = null
-    open var sessionEndTime: Date? = null
-    open var description: String? = null
-    open var photos: String? = null
+ class Logs (
+     var Id: Int,
+     var activityTypeId: Int,
+     var date: Date,
+     var sessionStartTime: Date,
+     var sessionEndTime: Date,
+     var description: String,
+     var photos: String,
+)
+
+fun Logs.asDatabaseModel(): DatabaseLogs {
+    return DatabaseLogs(Id, activityTypeId, Converter.dateToTimestamp(date)!!, Converter.dateToTimestamp(sessionStartTime)!!, Converter.dateToTimestamp(sessionEndTime)!!, description, photos)
 }

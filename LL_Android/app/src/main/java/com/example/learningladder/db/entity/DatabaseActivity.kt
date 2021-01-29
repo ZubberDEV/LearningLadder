@@ -1,10 +1,8 @@
 package com.example.learningladder.db.entity
 
-import android.app.Activity
-import android.media.Image
-import android.view.autofill.AutofillId
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.example.learningladder.domain.Activity
 
 @Entity
 data class DatabaseActivity(@PrimaryKey(autoGenerate = true)
@@ -16,6 +14,6 @@ data class DatabaseActivity(@PrimaryKey(autoGenerate = true)
 
 fun List<DatabaseActivity>.asModel(): List<Activity>{
     return map {
-        Activity()
+        Activity(it.id, it.type, it.scorePerMinute, it.thumbImage, it.colorCode)
     }
 }

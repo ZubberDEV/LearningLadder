@@ -1,13 +1,16 @@
 package com.example.learningladder.domain
 
-import android.media.Image
-import android.view.autofill.AutofillId
-import java.io.Serializable
+import com.example.learningladder.db.entity.DatabaseActivity
+import com.example.learningladder.db.utils.Converter
 
-open class Activity ():Serializable {
-    open var id: Int? = null
-    open var type: String? = null
-    open var scorePerMinute: Int? =null
-    open var thumbImage: String? = null
-    open var colorCode: Int? = null
+class Activity(
+    var id: Int,
+    var type: String,
+    var scorePerMinute: Int,
+    var thumbImage: String,
+    var colorCode: Int
+)
+
+fun Activity.asDatabaseModel(): DatabaseActivity {
+    return DatabaseActivity(id, type, scorePerMinute, thumbImage, colorCode)
 }

@@ -14,5 +14,5 @@ interface ActivityDao {
     fun getActivity(): LiveData<List<DatabaseActivity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(Activity: List<DatabaseActivity>)
+    fun insert(activity: DatabaseActivity)
 }

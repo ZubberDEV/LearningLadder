@@ -14,5 +14,5 @@ interface LogsDao {
     fun getLog(): LiveData<List<DatabaseLogs>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(logs: List<DatabaseLogs>)
+    fun insert(log: DatabaseLogs)
 }
