@@ -17,6 +17,6 @@ data class DatabaseLogs(@PrimaryKey(autoGenerate = true)
 
 fun List<DatabaseLogs>.asModel(): List<Logs>{
     return map {
-        Logs(it.Id, it.activityTypeId, Converter.fromTimestamp(it.date), Converter.fromTimestamp(it.sessionStartTime), Converter.fromTimestamp(it.sessionEndTime))
+        Logs(it.Id, it.activityTypeId, Converter.fromTimestamp(it.date), Converter.fromTimestamp(it.sessionStartTime), Converter.fromTimestamp(it.sessionEndTime), it.description, it.photos)
     }
 }

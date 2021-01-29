@@ -7,7 +7,7 @@ object Converter {
         return value?.let { Date(it) }
     }
 
-    fun dateToTimestamp(date: java.util.Date): Long? {
+    fun dateToTimestamp(date: Date?): Long? {
         return date?.time
     }
 }

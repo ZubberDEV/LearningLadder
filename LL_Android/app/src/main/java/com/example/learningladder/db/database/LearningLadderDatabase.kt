@@ -8,7 +8,6 @@ import com.example.learningladder.db.dao.PhotosDao
 import com.example.learningladder.db.entity.DatabaseActivity
 import com.example.learningladder.db.entity.DatabaseLogs
 import com.example.learningladder.db.entity.DatabasePhotos
-import com.example.learningladder.db.utils.Converters
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.internal.synchronized
 
