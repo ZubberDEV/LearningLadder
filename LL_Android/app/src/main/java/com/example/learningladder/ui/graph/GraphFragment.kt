@@ -14,6 +14,14 @@ class GraphFragment : Fragment() {
 
     private lateinit var graphViewModel: GraphViewModel
 
+    private val viewModel: GraphViewModel by lazy {
+        val activity = requireNotNull(this.activity) {
+            "You can only access the viewModel after onActivityCreated()"
+        }
+        ViewModelProvider(this, GraphViewModel.Factory(activity.application))
+                .get(GraphViewModel::class.java)
+    }
+
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,

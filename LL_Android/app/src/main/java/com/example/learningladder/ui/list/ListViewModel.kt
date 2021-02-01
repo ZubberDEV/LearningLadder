@@ -1,5 +1,6 @@
 package com.example.learningladder.ui.list
 
+import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -10,4 +11,5 @@ class ListViewModel : ViewModel() {
         value = "This is list Fragment"
     }
     val text: LiveData<String> = _text
+
 }

@@ -14,6 +14,14 @@ class TypeFragment : Fragment() {
 
     private lateinit var typeViewModel: TypeViewModel
 
+    private val viewModel: TypeViewModel by lazy {
+        val activity = requireNotNull(this.activity) {
+            "You can only access the viewModel after onActivityCreated()"
+        }
+        ViewModelProvider(this, TypeViewModel.Factory(activity.application))
+                .get(TypeViewModel::class.java)
+    }
+
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,

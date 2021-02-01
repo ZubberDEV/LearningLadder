@@ -10,7 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.learningladder.R
 
-class listFragment : Fragment() {
+class ListFragment : Fragment() {
 
     private lateinit var listViewModel: ListViewModel
 
