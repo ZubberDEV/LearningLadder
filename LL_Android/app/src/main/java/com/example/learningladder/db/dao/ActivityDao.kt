@@ -10,7 +10,7 @@ import com.example.learningladder.db.entity.DatabaseActivity
 @Dao
 interface ActivityDao {
 
-    @Query("SELECT * FROM databaseactivity")
+    @Query("SELECT * FROM DatabaseActivity")
     fun getActivity(): LiveData<List<DatabaseActivity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

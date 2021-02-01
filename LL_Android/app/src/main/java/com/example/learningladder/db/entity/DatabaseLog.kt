@@ -3,10 +3,10 @@ package com.example.learningladder.db.entity
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.learningladder.db.utils.Converter
-import com.example.learningladder.domain.Logs
+import com.example.learningladder.domain.Log
 
 @Entity
-data class DatabaseLogs(@PrimaryKey(autoGenerate = true)
+data class DatabaseLog(@PrimaryKey(autoGenerate = true)
                         val Id: Int,
                         val activityTypeId: Int,
                         val date: Long,
@@ -15,8 +15,8 @@ data class DatabaseLogs(@PrimaryKey(autoGenerate = true)
                         val description: String,
                         val photos: String)
 
-fun List<DatabaseLogs>.asModel(): List<Logs>{
+fun List<DatabaseLog>.asModel(): List<Log>{
     return map {
-        Logs(it.Id, it.activityTypeId, Converter.fromTimestamp(it.date), Converter.fromTimestamp(it.sessionStartTime), Converter.fromTimestamp(it.sessionEndTime), it.description, it.photos)
+        Log(it.Id, it.activityTypeId, Converter.fromTimestamp(it.date), Converter.fromTimestamp(it.sessionStartTime), Converter.fromTimestamp(it.sessionEndTime), it.description, it.photos)
     }
 }
