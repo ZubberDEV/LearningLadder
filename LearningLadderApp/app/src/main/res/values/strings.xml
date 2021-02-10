@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LearningLadderApp</string>
+    <string name="nav_header_desc">Header</string>
+    <string name="header_title">Learning Ladder</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+</resources>

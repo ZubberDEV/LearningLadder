@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="History">
+        <menu>
+
+            <item android:title="List"
+                android:id="@+id/list"
+                android:icon="@drawable/list"/>
+
+            <item android:title="Graph"
+                android:id="@+id/graph"
+                android:icon="@drawable/graph"/>
+
+            <item android:title="Record Activity"
+                android:id="@+id/record_activity"
+                android:icon="@drawable/record_activity"/>
+        </menu>
+
+    </item>
+
+    <item android:title="Activities">
+
+        <menu>
+
+            <item android:title="Type"
+                android:id="@+id/type"
+                android:icon="@drawable/type"/>
+
+            <item android:title="Add Activity"
+                android:id="@+id/add_activity"
+                android:icon="@drawable/add_activity"/>
+
+        </menu>
+
+    </item>
+
+
+</menu>
